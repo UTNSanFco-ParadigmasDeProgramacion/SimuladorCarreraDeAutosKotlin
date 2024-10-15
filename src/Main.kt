@@ -2,4 +2,5 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     println("Hola Mundo!!!")
+    println("test")
 }
