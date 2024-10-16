@@ -23,7 +23,7 @@ abstract class VehiculoCustom(
             if(velocidadActual<0) {
                 velocidadActual=0
             }
-            println("Nueva velocidad de ${this.javaClass.simpleName}: $velocidadActual")
+            println("Nueva velocidad de ${this.javaClass.simpleName} $nombre: $velocidadActual km/h")
         }
     }
 
