@@ -10,19 +10,20 @@ abstract class VehiculoCustom(
             if (velocidadActual < velocidadMaxima) {
                 velocidadActual += aceleracion
                 combustible -= 1
-            } else {
-                println("Error, falta de combustible")
             }
         }
+        else {
+                println("Error, falta de combustible")
+            }
     }
 
     override fun frenar() {
         if (velocidadActual > 0) {
             velocidadActual -= frenado
-            if(frenado<0) {
-                frenado=0
+            if(velocidadActual<0) {
+                velocidadActual=0
             }
-            println("Nueva velocidad: $velocidadActual")
+            println("Nueva velocidad de ${this.javaClass.simpleName}: $velocidadActual")
         }
     }
 

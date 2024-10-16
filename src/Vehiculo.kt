@@ -3,7 +3,7 @@ abstract class Vehiculo(
     val velocidadMaxima: Int,
     var combustible: Int,
     val aceleracion: Int,
-    var frenado: Int,
+    val frenado: Int,
 ) {
     // region Properties
     var velocidadActual: Int = 0
