@@ -9,7 +9,7 @@ abstract class Vehiculo(
     var velocidadActual: Int = 0
     var distanciaRecorrida: Int = 0
     // endregion
-
+//
     // region Abstract function
     abstract fun acelerar()
     abstract fun frenar()
