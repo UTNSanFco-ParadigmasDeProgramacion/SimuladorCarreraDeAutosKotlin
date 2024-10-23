@@ -10,7 +10,7 @@ open class VehiculoCustom (
 
     override fun acelerar(){
         if (combustible > 0){
-          while (combustible > 0 && velocidadActual < velocidadMaxima)
+          while (combustible > 0 )
           {
               combustible -= 1
                   velocidadActual= (velocidadActual + aceleracion)
@@ -22,7 +22,9 @@ open class VehiculoCustom (
               }
 
 
+
           }
+          println("$nombre se quedo sin combustible y se detuvo")
         } else {
             println("$nombre no tiene combustible")
         }
