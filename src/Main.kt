@@ -5,22 +5,46 @@ fun main() {
     val autoDeportivo = AutoDeportivo ("corsa")
     val camion = Camion ("scania")
 
-    println("----inicio carrera----")
 
-    moto.acelerar()
-    moto.avanzar()
-    moto.frenar()
-    println(moto)
 
-    autoDeportivo.acelerar()
-    autoDeportivo.avanzar()
-    autoDeportivo.frenar()
-    println(autoDeportivo)
+        val pista = PistaPersonalizada("UTN", 100)
+        //TODO instanciar Pista Custom
+        //TODO Instanciar los distintos vehiculos
+        val vehiculos: MutableList<Vehiculo> = mutableListOf()
+      vehiculos.add(moto)
+      vehiculos.add(autoDeportivo)
+      vehiculos.add(camion)
+        var ganador: Vehiculo? = null
+        var turnos = 0
 
-    camion.acelerar()
-    camion.avanzar()
-    camion.frenar()
-    println(camion)
+        while (ganador == null) {
+            turnos++
 
-    println("finalizo la carrera")
-}
+            println("----- Turno $turnos -----\n")
+
+            // Cambiar clima en cada 3 turnos
+            if (turnos % 3 == 0) {
+                pista.cambiarClima()
+
+            }
+
+            // Simulación de la carrera
+            vehiculos.forEach { vehiculo ->
+                //TODO: Completar metodos
+                vehiculo.acelerar()
+                vehiculo.avanzar()
+                pista.aplicarCondiciones(vehiculo)
+                pista.aplicarEventoAleatorio(vehiculo)
+                if (vehiculo.distanciaRecorrida >= pista.longitud) {
+                    ganador = vehiculo
+                }
+                println(vehiculo.toString())
+            }
+
+            println("----------------\n")
+            // Pausa entre turnos
+            Thread.sleep(1000)
+        }
+
+        println("🏁 ${ganador?.nombre} ha ganado la carrera en $turnos turnos!")
+    }

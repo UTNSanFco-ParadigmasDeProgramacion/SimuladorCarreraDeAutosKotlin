@@ -1,7 +1,7 @@
 abstract class Vehiculo(
     val nombre: String,
     val velocidadMaxima: Int,
-    var combustible: Int,
+    var combustible: Double,
     val aceleracion: Int,
     val frenado: Int,
 ) {
@@ -14,6 +14,11 @@ abstract class Vehiculo(
     abstract fun acelerar()
     abstract fun frenar()
     abstract fun avanzar()
+    abstract fun detener ()
+    abstract fun incrementarCombustible()
+    abstract fun combustibleMaximo ():Double
+    abstract fun reducirVelocidad (factor:Double)
+    abstract fun incrementarConsumo ()
     // endregion
 
     override fun toString(): String {
