@@ -1,38 +1,75 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 fun main() {
-    val pista = Pista(100, "soleado")
-    //TODO instanciar Pista Custom
-    //TODO Instanciar los distintos vehiculos
-    val vehiculos: List<Vehiculo> = listOf()
+    var moto1 = Moto("NicoteHD")
+    var moto2 = Moto("Felipe")
+    var moto3 = Moto("Jeremias")
 
-    var ganador: Vehiculo? = null
-    var turnos = 0
+    var auto1 = AutoDeportivo("Jose")
+    var auto2 = AutoDeportivo("Matias")
+    var auto3 = AutoDeportivo("Facundo")
 
-    while (ganador == null) {
-        turnos++
+    var camion1 = Camion("Ulises")
+    var camion2 = Camion("Juan")
+    var camion3 = Camion("Pepito")
 
-        println("----- Turno $turnos -----\n")
+    /*
+    moto1.acelerar()
+    println(moto1.toString())
 
-        // Cambiar clima en cada 3 turnos
-        if (turnos % 3 == 0) {
-            pista.cambiarClima()
-        }
+    auto1.acelerar()
+    auto1.frenar()
+    auto1.toString()
+    println(auto1.toString())
 
-        // Simulación de la carrera
-        vehiculos.forEach { vehiculo ->
-            //TODO: Completar metodos
+    println(camion1.toString())
+    camion1.acelerar()
+    camion1.avanzar()
 
-            if (vehiculo.distanciaRecorrida >= pista.longitud) {
-                ganador = vehiculo
-            }
-            println(vehiculo.toString())
-        }
+    println(camion1.toString())
 
-        println("----------------\n")
-        // Pausa entre turnos
-        Thread.sleep(1000)
-    }
+    var pistaCustom = PistaPersonalizadaFacundoJoseSereno()
+    pistaCustom.aplicarCondiciones(moto1)
+    pistaCustom.aplicarCondiciones(moto2)
+    pistaCustom.aplicarCondiciones(moto3)
+    pistaCustom.aplicarCondiciones(auto1)
+    pistaCustom.aplicarCondiciones(auto2)
+    pistaCustom.aplicarCondiciones(auto3)
+    pistaCustom.aplicarCondiciones(camion1)
+    pistaCustom.aplicarCondiciones(camion2)
+    pistaCustom.aplicarCondiciones(camion3)
 
-    println("🏁 ${ganador?.nombre} ha ganado la carrera en $turnos turnos!")
+    pistaCustom.cambiarClima()
+
+    pistaCustom.aplicarCondiciones(moto1)
+    pistaCustom.aplicarCondiciones(moto2)
+    pistaCustom.aplicarCondiciones(moto3)
+    pistaCustom.aplicarCondiciones(auto1)
+    pistaCustom.aplicarCondiciones(auto2)
+    pistaCustom.aplicarCondiciones(auto3)
+    pistaCustom.aplicarCondiciones(camion1)
+    pistaCustom.aplicarCondiciones(camion2)
+    pistaCustom.aplicarCondiciones(camion3)
+
+    pistaCustom.aplicarEventoAleatorio(moto1)
+    pistaCustom.aplicarEventoAleatorio(moto2)
+    pistaCustom.aplicarEventoAleatorio(moto3)
+    pistaCustom.aplicarEventoAleatorio(auto1)
+    pistaCustom.aplicarEventoAleatorio(auto2)
+    pistaCustom.aplicarEventoAleatorio(auto3)
+    pistaCustom.aplicarEventoAleatorio(camion1)
+    pistaCustom.aplicarEventoAleatorio(camion2)
+    pistaCustom.aplicarEventoAleatorio(camion3)
+    */
+    var carrera = Carrera(30)
+    carrera.agregarVehiculo(moto1)
+    carrera.agregarVehiculo(moto2)
+    carrera.agregarVehiculo(moto3)
+    carrera.agregarVehiculo(auto1)
+    carrera.agregarVehiculo(auto2)
+    carrera.agregarVehiculo(auto3)
+    carrera.agregarVehiculo(camion1)
+    carrera.agregarVehiculo(camion2)
+    carrera.agregarVehiculo(camion3)
+
+    carrera.carrera()
 }
