@@ -1,13 +1,14 @@
 abstract class Vehiculo(
     val nombre: String,
     val velocidadMaxima: Int,
-    var combustible: Int,
+    var combustible: Double,
     val aceleracion: Int,
     val frenado: Int,
+    var consumo: Double = 1.0,
 ) {
     // region Properties
-    var velocidadActual: Int = 0
-    var distanciaRecorrida: Int = 0
+    var velocidadActual: Double = 0.0
+    var distanciaRecorrida: Double = 0.0
     // endregion
 
     // region Abstract function
