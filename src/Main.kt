@@ -72,5 +72,4 @@ fun main() {
     carrera.agregarVehiculo(camion3)
 
     carrera.carrera()
-
 }
